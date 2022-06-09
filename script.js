@@ -33,19 +33,18 @@ let addFun=()=>{
         
         WriteComment.value=''; 
         // return para;
-arr.push(para);
-return [arr,para];
- 
-}
-   
+    arr.push(para);
+   return [arr,para];
+} 
     else{
         alert('Pls fill the comment')
-    }   
-   
+    }     
 }
-
 AddBtn.addEventListener('click', addFun);
 
+
+
+//  Delete comment Function
 
 let delFun =()=>{
     if(NewComment.innerHTML != ''){
