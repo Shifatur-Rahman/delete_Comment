@@ -20,25 +20,29 @@ let i,j,arr=[];
 //    Add comment Function
 
 let addFun=()=>{
-
+    let para = document.createElement('p');
+    NewComment.appendChild(para);
     if(WriteComment.value != ''){
-        let para = document.createElement('p');
-        NewComment.appendChild(para);
+        
+       
         para.innerHTML = WriteComment.value;
-        // console.log(WriteComment.value);
-        // console.log(para.innerHTML);
+        para.style.backgroundColor = '#747d8c';
+        para.style.borderRadius = '5px';
+        para.style.padding = '10px';
+        para.style.color = '#ffffff';
+        
         WriteComment.value=''; 
-arr.push(para.innerHTML);
-return arr;
-
+        // return para;
+arr.push(para);
+return [arr,para];
+ 
 }
    
     else{
         alert('Pls fill the comment')
     }   
+   
 }
-
-
 
 AddBtn.addEventListener('click', addFun);
 
@@ -46,35 +50,21 @@ AddBtn.addEventListener('click', addFun);
 let delFun =()=>{
     if(NewComment.innerHTML != ''){
         if(RemoveComment.value == 'delete'){
-            for(i=0;i<arr.length;i++){
-            arr[i].style.display = "none";
-            arr[i].parentElement.remove();
-    //     arr.pop();
-    //    break;
-      
-            }
-        }
+             for(i=0;i<arr.length;i++){
+             arr[i].style.display = 'none';
+             arr[i].parentElement.remove();
+            // arr.shift();
+            console.log(arr[i]);
+             }   
+             }
        
-    } else{
-       alert('There have no elements')
+    }   else{
+            alert('There have no elements');
     }
     RemoveComment.value ='';
 }
 
 DelBtn.addEventListener('click', delFun);
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
